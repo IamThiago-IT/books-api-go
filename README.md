@@ -170,11 +170,33 @@ curl -X DELETE http://localhost:8000/livros/1
 ## 📁 Estrutura
 
 ```
-📦 Go
- ┣ 📜 main.go      # Código principal da aplicação
- ┣ 📜 go.mod       # Dependências do projeto
- ┣ 📜 README.md    # Documentação
- ┗ 📜 LICENSE      # Licença MIT
+📦 books-api-go
+ ┣ 📂 cmd
+ ┃ ┗ 📂 api
+ ┃   ┗ 📜 main.go                 # Ponto de entrada da aplicação
+ ┣ 📂 internal
+ ┃ ┣ 📂 handler
+ ┃ ┃ ┣ 📜 health_handler.go       # Handler para health check
+ ┃ ┃ ┗ 📜 livro_handler.go        # Handlers HTTP para livros
+ ┃ ┣ 📂 middleware
+ ┃ ┃ ┣ 📜 cors.go                 # Middleware CORS
+ ┃ ┃ ┗ 📜 logging.go              # Middleware de logging
+ ┃ ┣ 📂 model
+ ┃ ┃ ┗ 📜 livro.go                # Modelo de dados do livro
+ ┃ ┣ 📂 repository
+ ┃ ┃ ┗ 📜 livro_repository.go     # Camada de acesso a dados
+ ┃ ┣ 📂 router
+ ┃ ┃ ┗ 📜 router.go               # Configuração das rotas
+ ┃ ┗ 📂 service
+ ┃   ┗ 📜 livro_service.go        # Regras de negócio
+ ┣ 📂 pkg
+ ┃ ┗ 📂 response
+ ┃   ┗ 📜 response.go             # Utilitários para respostas HTTP
+ ┣ 📜 Dockerfile                  # Configuração Docker
+ ┣ 📜 docker-compose.yml          # Configuração Docker Compose
+ ┣ 📜 go.mod                      # Dependências do projeto
+ ┣ 📜 LICENSE                     # Licença MIT
+ ┗ 📜 README.md                   # Documentação
 ```
 
 ---
